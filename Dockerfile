@@ -13,6 +13,6 @@ RUN npm install
 # Bundle app source
 COPY . .
 
-RUN apt update && apt install -y openldap*
+RUN apt update && apt install -y openldap* telnet
 
 CMD [ "node", "server.js" ]
