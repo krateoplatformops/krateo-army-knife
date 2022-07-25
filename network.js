@@ -7,7 +7,7 @@ const params = {
   }
 }
 
-if (process.env.HTTP_PROXY) {
+if (process.env.HTTP_PROXY && process.env.HTTP_PROXY !== '') {
   params.proxy.host = process.env.HTTP_PROXY.split(':')[0]
   params.proxy.port = process.env.HTTP_PROXY.split(':')[1]
 }
@@ -23,7 +23,7 @@ const main = async () => {
       console.log('Ok!')
     })
     .catch((err) => {
-      console.log(err.response.data)
+      console.log(err.response)
       console.log('#########################')
       console.log(err.response.headers)
     })
