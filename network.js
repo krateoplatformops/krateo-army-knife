@@ -23,9 +23,11 @@ const main = async () => {
       console.log('Ok!')
     })
     .catch((err) => {
-      console.log(err.response)
-      console.log('#########################')
-      console.log(err.response.headers)
+      console.log(err)
+      try {
+        console.log('#########################')
+        console.log(err.response.headers)
+      } catch {}
     })
 }
 
