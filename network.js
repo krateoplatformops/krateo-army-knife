@@ -9,8 +9,10 @@ const params = {
 
 if (process.env.HTTP_PROXY && process.env.HTTP_PROXY !== '') {
   params.proxy.host = process.env.HTTP_PROXY.split(':')[0]
-  params.proxy.port = process.env.HTTP_PROXY.split(':')[1]
+  params.proxy.port = parseInt(process.env.HTTP_PROXY.split(':')[1])
 }
+
+console.log(params)
 
 const main = async () => {
   const api =
