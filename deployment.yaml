@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: krateo-army-knife
+  namespace: krateo-system
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: krateo-army-knife
+  template:
+    metadata:
+      labels:
+        app: krateo-army-knife
+    spec:
+      containers:
+        - name: krateo-army-knife
+          image: ghcr.io/krateoplatformops/krateo-army-knife:latest
+          resources:
+            limits:
+              cpu: 20m
+              memory: 32Mi
